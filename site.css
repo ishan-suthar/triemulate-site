@@ -229,3 +229,5 @@ footer .grid{padding-top:26px;padding-bottom:26px}
 
 /* ---- access call to action pair ---- */
 .ctagroup{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+
+.founder{display:inline-block;margin-top:6px;font-weight:600;letter-spacing:.12em;color:var(--gray-d)}
