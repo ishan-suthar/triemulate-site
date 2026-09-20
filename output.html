@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Output — TriEmulate</title>
+<meta name="description" content="What TriEmulate produces: a two-column target trial protocol, an explicit causal graph, and reporting-checklist coverage.">
+<link rel="canonical" href="https://www.triemulate.com/output">
+<meta property="og:url" content="https://www.triemulate.com/output">
+<meta property="og:image" content="https://www.triemulate.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TriEmulate">
+<meta property="og:title" content="Output — TriEmulate">
+<meta property="og:description" content="What TriEmulate produces: a two-column target trial protocol, an explicit causal graph, and reporting-checklist coverage.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="skip" href="#protocol">Skip to content</a>
+
+<nav><div class="grid">
+  <a class="logo" href="index.html">Tri<span>Emulate</span></a>
+  <div class="navstat">Target Trial Emulation Engine &middot; In Development &middot; Patent Pending</div>
+  <div class="navlinks">
+    <a href="method.html">Method</a>
+    <a href="output.html" class="on">Output</a>
+    <a href="boundaries.html">Boundaries</a>
+    <a href="boundaries.html#access">Contact</a>
+  </div>
+</div></nav>
+
+<!-- 3. THE OUTPUT -->
+<section id="protocol"><div class="grid">
+  <div class="side"><div class="slabel">Protocol</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Eight components.</span><span class="blueline">Both columns.</span></h2>
+    <p class="lede">A target trial protocol has eight parts. The engine writes each one twice: once as the trial that would answer the question, and once as the way that part would be carried out in observational data. Putting them side by side is what makes a disagreement between the two visible instead of buried.</p>
+
+    <div class="qblock">
+      <div class="lab">Example question</div>
+      <p>Among adults admitted with acute decompensated heart failure, does early intravenous diuresis compared with delayed diuresis reduce 28-day mortality?</p>
+    </div>
+
+    <div class="ptable">
+      <div class="phead">
+        <div>&nbsp;</div>
+        <div>Target trial specification</div>
+        <div class="emu">Emulation using observational data</div>
+      </div>
+      <div class="prow"><div class="ix">A</div><div class="spec">Eligibility criteria</div><div class="emu">The same criteria, judged using only information recorded before the start date.</div></div>
+      <div class="prow"><div class="ix">B</div><div class="spec">Treatment strategies</div><div class="emu">Each strategy written as an observable pattern in the record, with the window in which it is classified.</div></div>
+      <div class="prow"><div class="ix">C</div><div class="spec">Assignment procedures</div><div class="emu">Randomization replaced by adjustment, with the assumption that makes the groups comparable stated rather than implied.</div></div>
+      <div class="prow"><div class="ix">D</div><div class="spec">Follow-up</div><div class="emu">Starts at assignment in both. The rules for when it ends are fixed before any data is pulled.</div></div>
+      <div class="prow"><div class="ix">E</div><div class="spec">Outcomes</div><div class="emu">Each outcome given a definition the record can support, a measurement window, and a stated reliability.</div></div>
+      <div class="prow"><div class="ix">F</div><div class="spec">Causal contrasts</div><div class="emu">The comparison and effect measure carried across intact, with the quantity being estimated named explicitly.</div></div>
+      <div class="prow"><div class="ix">G</div><div class="spec">Identifying assumptions</div><div class="emu">What has to be true for the estimate to mean what it claims, which variables carry that weight, and what the absence of randomization costs.</div></div>
+      <div class="prow"><div class="ix">H</div><div class="spec">Data analysis plan</div><div class="emu">What the analysis must account for, how missing data is handled, and which sensitivity analyses follow.</div></div>
+    </div>
+  </div>
+</div></section>
+<!-- 6. CAUSAL STRUCTURE -->
+<section id="structure"><div class="grid">
+  <div class="side"><div class="slabel">Structure</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Every variable</span><span>gets a <span class="blue">role.</span></span></h2>
+    <p class="lede">A list of variables is not a design. Each one is classified into one of nine causal roles, and that classification decides whether it belongs in the adjustment set. A confounder has to be in. A mediator must not be, because adjusting for it removes part of the very effect being measured. A collider must not be, because conditioning on it manufactures an association that was never there. The reasoning is recorded next to each variable in plain clinical language.</p>
+
+    <div class="dag">
+      <svg viewBox="0 0 940 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A causal graph: three confounders adjusted for, a mediator and a collider excluded, and one unmeasured variable that cannot be adjusted for at all">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#444343"/>
+          </marker>
+          <marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#1351AA"/>
+          </marker>
+        </defs>
+
+        <g stroke="#1351AA" stroke-width="1.4" fill="none" marker-end="url(#arb)">
+          <path d="M 208 62 L 392 120"/>
+          <path d="M 208 132 L 392 130"/>
+          <path d="M 208 202 L 392 142"/>
+          <path d="M 208 56 C 420 4 640 26 686 106"/>
+          <path d="M 208 126 C 430 88 620 74 686 114"/>
+          <path d="M 208 196 C 440 172 610 126 686 124"/>
+        </g>
+
+        <g stroke="#444343" stroke-width="1.4" fill="none" marker-end="url(#ar)">
+          <path d="M 208 266 C 430 244 610 166 686 136"/>
+          <path d="M 208 278 C 320 292 348 200 392 150"/>
+          <path d="M 470 156 L 592 218"/>
+          <path d="M 668 218 L 716 158"/>
+          <path d="M 452 156 L 566 306"/>
+          <path d="M 776 154 C 828 216 812 292 722 318"/>
+        </g>
+
+        <path d="M 506 134 L 690 134" stroke="#141414" stroke-width="2.4" fill="none" marker-end="url(#ar)"/>
+
+        <g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+          <rect x="40" y="44" width="168" height="36" fill="#1351AA"/>
+          <text x="124" y="66" fill="#E3E2DE" text-anchor="middle">BASELINE SEVERITY</text>
+          <rect x="40" y="114" width="168" height="36" fill="#1351AA"/>
+          <text x="124" y="136" fill="#E3E2DE" text-anchor="middle">KIDNEY FUNCTION</text>
+          <rect x="40" y="184" width="168" height="36" fill="#1351AA"/>
+          <text x="124" y="206" fill="#E3E2DE" text-anchor="middle">AGE</text>
+
+          <rect x="40" y="254" width="168" height="36" fill="none" stroke="#7A7A7A" stroke-width="1.4" stroke-dasharray="5 4"/>
+          <text x="124" y="276" fill="#7A7A7A" text-anchor="middle">FRAILTY</text>
+
+          <rect x="396" y="116" width="110" height="36" fill="#141414"/>
+          <text x="451" y="138" fill="#E3E2DE" text-anchor="middle">TREATMENT</text>
+
+          <rect x="690" y="116" width="110" height="36" fill="#141414"/>
+          <text x="745" y="138" fill="#E3E2DE" text-anchor="middle">OUTCOME</text>
+
+          <rect x="566" y="222" width="150" height="36" fill="none" stroke="#141414" stroke-width="1.4"/>
+          <text x="641" y="244" fill="#141414" text-anchor="middle">DIURETIC RESPONSE</text>
+
+          <rect x="566" y="304" width="150" height="36" fill="none" stroke="#141414" stroke-width="1.4"/>
+          <text x="641" y="326" fill="#141414" text-anchor="middle">ICU ESCALATION</text>
+        </g>
+
+        <g font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#7A7A7A" letter-spacing="1">
+          <text x="124" y="26" text-anchor="middle">ADJUSTMENT SET</text>
+          <text x="740" y="244">MEDIATOR</text>
+          <text x="740" y="326">COLLIDER</text>
+          <text x="124" y="308" text-anchor="middle">UNMEASURED</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span class="lg"><span class="sw fill"></span>Adjust</span>
+        <span class="lg"><span class="sw open"></span>Do not adjust</span>
+        <span class="lg"><span class="sw dash"></span>Unmeasured</span>
+        <span class="lg">Illustrative</span>
+      </div>
+    </div>
+    <p class="foot-note">Frailty is the honest part of this picture. It causes both treatment and outcome, it is rarely recorded in structured form, and no amount of adjustment recovers it. The engine names variables like this rather than leaving them out of the diagram.</p>
+
+    <div class="metrics">
+      <div class="me"><div class="v">9</div><div class="k">causal roles, each with its own inclusion rule</div></div>
+      <div class="me"><div class="v">14</div><div class="k">bias mechanisms checked on every design</div></div>
+      <div class="me"><div class="v">10</div><div class="k">candidate start dates, weighed not assumed</div></div>
+      <div class="me"><div class="v">21</div><div class="k">reporting items tracked to completion</div></div>
+    </div>
+  </div>
+</div></section>
+<!-- 7. REPORTING -->
+<section id="reporting"><div class="grid">
+  <div class="side"><div class="slabel">Reporting</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Twenty-one items.</span><span class="blueline">Six are ours.</span></h2>
+    <p class="lede">Published emulations are judged against a 21-item reporting checklist. Rather than claim coverage, the engine marks each item by what would unblock it. Six come out of the design itself. Seven are things only the investigator can supply. The remaining eight cannot be written until the analysis has been run.</p>
+
+    <div class="panel">
+      <div class="panelbar"><span class="lab">Checklist items by what unblocks each one</span></div>
+      <div class="tstrip">
+        <div class="tseg agent"><span>1</span></div>
+        <div class="tseg inv"><span>2</span></div>
+        <div class="tseg agent"><span>3</span></div>
+        <div class="tseg inv"><span>4</span></div>
+        <div class="tseg agent"><span>5</span></div>
+        <div class="tseg agent"><span>6</span></div>
+        <div class="tseg agent"><span>7</span></div>
+        <div class="tseg post"><span>8</span></div>
+        <div class="tseg post"><span>9</span></div>
+        <div class="tseg post"><span>10</span></div>
+        <div class="tseg post"><span>11</span></div>
+        <div class="tseg post"><span>12</span></div>
+        <div class="tseg post"><span>13</span></div>
+        <div class="tseg post"><span>14</span></div>
+        <div class="tseg post"><span>15</span></div>
+        <div class="tseg agent"><span>16</span></div>
+        <div class="tseg inv"><span>17</span></div>
+        <div class="tseg inv"><span>18</span></div>
+        <div class="tseg inv"><span>19</span></div>
+        <div class="tseg inv"><span>20</span></div>
+        <div class="tseg inv"><span>21</span></div>
+      </div>
+      <div class="tkeys">
+        <div class="tk agent"><div class="v">6</div><div class="n">written by the engine from the design itself: the causal question, the trial specification, its emulation, data sources, the abstract, and limitations</div></div>
+        <div class="tk"><div class="v">7</div><div class="n">supplied by the investigator: background, rationale, ethics approval, registration, materials sharing, funding, conflicts</div></div>
+        <div class="tk"><div class="v">8</div><div class="n">unwritable until results exist: participant counts, baseline distributions, follow-up, missing data, outcomes, estimates, sensitivity analyses, interpretation</div></div>
+      </div>
+      <div class="legend">
+        <span class="lg"><span class="sw fill"></span>Engine</span>
+        <span class="lg"><span class="sw open"></span>Investigator</span>
+        <span class="lg"><span class="sw dash"></span>Post-analysis</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- NEXT -->
+<section id="next"><div class="grid">
+  <div class="side"><div class="slabel">Next</div></div>
+  <div class="main">
+    <div class="cards">
+      <a class="card" href="boundaries.html">
+        <span class="cix mono">&rarr;</span>
+        <span class="ct">Boundaries</span>
+        <span class="cd">What it will not do</span>
+        <span class="cgo">Continue &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div></section>
+<footer><div class="grid">
+  <div class="fl">TriEmulate &mdash; Research Software &middot; Patent Pending</div>
+  <div class="fr">&copy; 2026 Ishan Suthar &middot; All rights reserved</div>
+</div></footer>
+</body>
+</html>

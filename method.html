@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method — TriEmulate</title>
+<meta name="description" content="How TriEmulate works: an eight-stage design sequence, a weighed start date, and eligibility written as stated rules.">
+<link rel="canonical" href="https://www.triemulate.com/method">
+<meta property="og:url" content="https://www.triemulate.com/method">
+<meta property="og:image" content="https://www.triemulate.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TriEmulate">
+<meta property="og:title" content="Method — TriEmulate">
+<meta property="og:description" content="How TriEmulate works: an eight-stage design sequence, a weighed start date, and eligibility written as stated rules.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="skip" href="#system">Skip to content</a>
+
+<nav><div class="grid">
+  <a class="logo" href="index.html">Tri<span>Emulate</span></a>
+  <div class="navstat">Target Trial Emulation Engine &middot; In Development &middot; Patent Pending</div>
+  <div class="navlinks">
+    <a href="method.html" class="on">Method</a>
+    <a href="output.html">Output</a>
+    <a href="boundaries.html">Boundaries</a>
+    <a href="boundaries.html#access">Contact</a>
+  </div>
+</div></nav>
+
+<!-- 2. THE SYSTEM -->
+<section id="system"><div class="grid">
+  <div class="side"><div class="slabel">System</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Question in.</span><span class="blueline">Design out.</span></h2>
+    <p class="lede">Each decision constrains the next, so the engine works in order rather than all at once. The start date governs eligibility. Eligibility governs the comparison. The comparison governs what the analysis has to account for. Step through the sequence below.</p>
+
+    <div class="flow">
+      <div class="rail" id="rail"></div>
+      <div class="detail">
+        <div class="dhead">
+          <span class="dix mono" id="d-ix">01</span>
+          <span class="dname" id="d-name">Restate</span>
+        </div>
+        <p class="dtext" id="d-text"></p>
+        <div class="dgrid">
+          <div class="db"><div class="dl">Decides</div><div class="dv" id="d-dec"></div></div>
+          <div class="db"><div class="dl">Constrains next</div><div class="dv" id="d-con"></div></div>
+        </div>
+        <div class="dacts">
+          <button class="btn sm dark" id="prev" type="button">Previous</button>
+          <button class="btn sm" id="next" type="button">Next stage</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<!-- 4. TIME ZERO -->
+<section id="timezero"><div class="grid">
+  <div class="side"><div class="slabel">Start Date</div></div>
+  <div class="main">
+    <h2 class="stack"><span>The start date is</span><span class="blueline">weighed, not assumed.</span></h2>
+    <p class="lede">Follow-up has to begin somewhere, and the wrong choice bakes in bias that no later analysis can remove. Each candidate is assessed on whether eligibility is knowable at that moment, whether treatment can be assigned there, whether follow-up can begin there, and what it risks. Discharge, for instance, looks convenient and quietly excludes everyone who died first.</p>
+
+    <div class="mtable"><div class="mgrid">
+      <div class="mhead">
+        <div>Candidate start date</div>
+        <div>Eligibility known</div>
+        <div>Assignment possible</div>
+        <div>Follow-up can start</div>
+        <div>Immortal time risk</div>
+        <div>Default</div>
+      </div>
+      <div class="mrow"><div class="an">First treatment order</div><div class="c">Yes</div><div class="c">Yes</div><div class="c">Yes</div><div class="c">Low</div><div><span class="verdict v-pref">Preferred</span></div></div>
+      <div class="mrow"><div class="an">First eligible lab value</div><div class="c">Yes</div><div class="c">Usually</div><div class="c">Yes</div><div class="c">Low</div><div><span class="verdict v-pref">Preferred</span></div></div>
+      <div class="mrow"><div class="an">Diagnosis confirmation</div><div class="c">Yes</div><div class="c">Usually</div><div class="c">Yes</div><div class="c">Low</div><div><span class="verdict v-pref">Preferred</span></div></div>
+      <div class="mrow"><div class="an">Qualifying procedure</div><div class="c">Yes</div><div class="c">Yes</div><div class="c">Yes</div><div class="c">Low</div><div><span class="verdict v-pref">Preferred</span></div></div>
+      <div class="mrow"><div class="an">Hospital admission</div><div class="c">Usually</div><div class="c">Sometimes</div><div class="c">Yes</div><div class="c">Moderate</div><div><span class="verdict v-acc">Acceptable</span></div></div>
+      <div class="mrow"><div class="an">First administration</div><div class="c">Usually</div><div class="c">Yes</div><div class="c">Yes</div><div class="c">Moderate</div><div><span class="verdict v-acc">Acceptable</span></div></div>
+      <div class="mrow"><div class="an">ICU admission</div><div class="c">Usually</div><div class="c">Usually</div><div class="c">Yes</div><div class="c">Moderate</div><div><span class="verdict v-caut">Caution</span></div></div>
+      <div class="mrow"><div class="an">Symptom onset</div><div class="c">Rarely</div><div class="c">Rarely</div><div class="c">Sometimes</div><div class="c">High</div><div><span class="verdict v-caut">Caution</span></div></div>
+      <div class="mrow"><div class="an">Study enrolment</div><div class="c">Yes</div><div class="c">Usually</div><div class="c">Yes</div><div class="c">Low</div><div><span class="verdict v-caut">Caution</span></div></div>
+      <div class="mrow"><div class="an">Hospital discharge</div><div class="c">Yes</div><div class="c">Sometimes</div><div class="c">Yes</div><div class="c">High</div><div><span class="verdict v-avoid">Avoid</span></div></div>
+    </div></div>
+    <p class="foot-note">Ten candidate anchors, each with its own scoring profile. A default is a starting point, not a verdict: the engine states which one it chose for your question and why the others were rejected.</p>
+  </div>
+</div></section>
+<!-- 5. ELIGIBILITY -->
+<section id="eligibility"><div class="grid">
+  <div class="side"><div class="slabel">Eligibility</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Every criterion</span><span class="blueline">is a cut.</span></h2>
+    <p class="lede">Cohorts are usually assembled from whichever filters a query happened to contain, and the attrition is reconstructed afterwards if anyone asks. Emulation forces each criterion to be a stated rule, applied once, at a defined moment, with what it removed recorded as it happens.</p>
+
+    <div class="panel">
+      <div class="cohortwrap">
+        <div class="crits" id="crits">
+          <div class="crit"><span class="k">Adults, 18 and over</span><span class="d">&minus;12,410</span></div>
+          <div class="crit"><span class="k">Qualifying primary diagnosis</span><span class="d">&minus;38,207</span></div>
+          <div class="crit"><span class="k">No prior enrolment</span><span class="d">&minus;6,842</span></div>
+          <div class="crit"><span class="k">Treatment ordered in window</span><span class="d">&minus;2,133</span></div>
+        </div>
+        <canvas id="cohort" role="img" aria-label="A scattered population thinning as each eligibility criterion is applied"></canvas>
+      </div>
+      <div class="counts">
+        <div class="co"><div class="lab">Screened</div><div class="v" id="c-screen">61,532</div></div>
+        <div class="co"><div class="lab">Excluded</div><div class="v" id="c-out">0</div></div>
+        <div class="co hit"><div class="lab">Analytic cohort</div><div class="v" id="c-in">61,532</div></div>
+      </div>
+      <div class="panelacts">
+        <button class="btn sm" id="cut" type="button">Apply next criterion</button>
+        <button class="btn sm dark" id="creset" type="button">Reset</button>
+        <span class="note" id="cstatus">0 of 4 applied &middot; Illustrative</span>
+      </div>
+    </div>
+    <p class="foot-note">Figures shown are invented for illustration. The engine writes the criteria and the rules for applying them; the counts come from running those rules against your own data.</p>
+  </div>
+</div></section>
+
+<!-- NEXT -->
+<section id="next"><div class="grid">
+  <div class="side"><div class="slabel">Next</div></div>
+  <div class="main">
+    <div class="cards">
+      <a class="card" href="output.html">
+        <span class="cix mono">&rarr;</span>
+        <span class="ct">Output</span>
+        <span class="cd">What the engine hands back</span>
+        <span class="cgo">Continue &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div></section>
+<footer><div class="grid">
+  <div class="fl">TriEmulate &mdash; Research Software &middot; Patent Pending</div>
+  <div class="fr">&copy; 2026 Ishan Suthar &middot; All rights reserved</div>
+</div></footer>
+<script src="assets/js/flow.js" defer></script>
+<script src="assets/js/cohort.js" defer></script>
+</body>
+</html>

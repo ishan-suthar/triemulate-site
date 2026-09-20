@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boundaries — TriEmulate</title>
+<meta name="description" content="What TriEmulate does, what it will not do, and how it maps a design onto your schema without reading a patient record.">
+<link rel="canonical" href="https://www.triemulate.com/boundaries">
+<meta property="og:url" content="https://www.triemulate.com/boundaries">
+<meta property="og:image" content="https://www.triemulate.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TriEmulate">
+<meta property="og:title" content="Boundaries — TriEmulate">
+<meta property="og:description" content="What TriEmulate does, what it will not do, and how it maps a design onto your schema without reading a patient record.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="skip" href="#different">Skip to content</a>
+
+<nav><div class="grid">
+  <a class="logo" href="index.html">Tri<span>Emulate</span></a>
+  <div class="navstat">Target Trial Emulation Engine &middot; In Development &middot; Patent Pending</div>
+  <div class="navlinks">
+    <a href="method.html">Method</a>
+    <a href="output.html">Output</a>
+    <a href="boundaries.html" class="on">Boundaries</a>
+    <a href="boundaries.html#access">Contact</a>
+  </div>
+</div></nav>
+
+<!-- 8. WHAT IT DOES AND DOESN'T -->
+<section id="different"><div class="grid">
+  <div class="side"><div class="slabel">Why Different</div></div>
+  <div class="main">
+    <h2 class="stack"><span>What it does.</span><span class="blueline">What it will not.</span></h2>
+    <p class="lede">A design that looks correct is worse than one that visibly fails, because only the second one gets caught. Most of the engineering here exists to keep failures visible rather than tidy them away.</p>
+
+    <div class="ptable">
+      <div class="phead">
+        <div>&nbsp;</div>
+        <div>What it does</div>
+        <div class="emu">What it will not do</div>
+      </div>
+      <div class="prow"><div class="ix">01</div><div class="spec">Resolves each concept to a field in your schema, with its timing and a stated reliability.</div><div class="emu">Substitute the nearest available field when the right one is missing. An unresolved reference is reported as unresolved.</div></div>
+      <div class="prow"><div class="ix">02</div><div class="spec">Declares every node and edge in the causal graph, then derives the adjustment set from it.</div><div class="emu">Claim the graph is correct, or that the effect is identified. Both remain your judgment to make.</div></div>
+      <div class="prow"><div class="ix">03</div><div class="spec">Names the quantity being estimated and states what the analysis has to account for.</div><div class="emu">Prescribe a statistical method, or run one. Choosing the estimator stays with the analyst.</div></div>
+      <div class="prow"><div class="ix">04</div><div class="spec">Specifies what to measure, over what window, and against which definition.</div><div class="emu">Produce effect estimates, participant counts, or any figure it did not read from your data.</div></div>
+      <div class="prow"><div class="ix">05</div><div class="spec">Checks each bias mechanism and names the diagnostic to run once the data is pulled.</div><div class="emu">Assert the design is unbiased. What cannot be resolved by design is written down as unresolved.</div></div>
+      <div class="prow"><div class="ix">06</div><div class="spec">Raises malformed or missing output where it happens, with the record of where it came from.</div><div class="emu">Quietly repair its own output into something that reads as complete.</div></div>
+    </div>
+  </div>
+</div></section>
+<!-- 9. YOUR DATA -->
+<section id="data"><div class="grid">
+  <div class="side"><div class="slabel">Your Data</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Portable design.</span><span class="blueline">Your mapping.</span></h2>
+    <p class="lede">The design layer is deliberately independent of any one database. Mapping runs against a catalog of your schema alone: table names, column names, and data types, holding no patient record. The catalog is built from a published data-model specification or from a schema description you upload, so the check runs in environments where the records themselves cannot be touched. The engine identifies the field each design variable would come from, reports the ones it cannot resolve rather than guessing, and hands back a mapping your team executes.</p>
+    <p class="foot-note">A catalog for OMOP CDM v5.4 is built in, covering 39 tables and 432 columns. Any other source is supported by uploading a description of its schema, which is admitted only if it carries schema metadata and no record-level content.</p>
+  </div>
+</div></section>
+<!-- 10. ACCESS -->
+<section class="access" id="access"><div class="grid">
+  <div class="side"><div class="slabel">Access</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Still</span><span class="blueline">building.</span></h2>
+    <div class="accessfoot">
+      <p>TriEmulate is research software under active development and is not yet generally available. A United States provisional patent application covering the system was filed in September 2026. If you work on causal inference in health data and want to follow it, or you have a question you would like to see put through it, get in touch.</p>
+      <a class="btn dark" href="mailto:hello@triemulate.com?subject=TriEmulate">Get In Touch</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="grid">
+  <div class="fl">TriEmulate &mdash; Research Software &middot; Patent Pending</div>
+  <div class="fr">&copy; 2026 Ishan Suthar &middot; All rights reserved</div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TriEmulate — Target Trial Emulation</title>
+<meta name="description" content="TriEmulate is a target trial emulation engine. It turns a clinical research question into an explicit, auditable study design.">
+<link rel="canonical" href="https://www.triemulate.com/">
+<meta property="og:url" content="https://www.triemulate.com/">
+<meta property="og:image" content="https://www.triemulate.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TriEmulate">
+<meta property="og:title" content="TriEmulate — Target Trial Emulation">
+<meta property="og:description" content="TriEmulate is a target trial emulation engine. It turns a clinical research question into an explicit, auditable study design.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="skip" href="#problem">Skip to content</a>
+
+<nav><div class="grid">
+  <a class="logo" href="index.html">Tri<span>Emulate</span></a>
+  <div class="navstat">Target Trial Emulation Engine &middot; In Development &middot; Patent Pending</div>
+  <div class="navlinks">
+    <a href="method.html">Method</a>
+    <a href="output.html">Output</a>
+    <a href="boundaries.html">Boundaries</a>
+    <a href="boundaries.html#access">Contact</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="grid">
+  <div class="side"><div class="slabel">Manifesto</div><div class="mark"></div></div>
+  <div class="main">
+    <h1>The trial you can't run. <span>Emulated.</span></h1>
+    <div class="herofoot">
+      <p>Nobody will randomize acutely ill patients to delayed treatment to settle the question. TriEmulate writes the protocol for that trial anyway, then states exactly how each part of it would be carried out in the data you already hold.</p>
+      <div class="cta">
+        <a class="btn" href="#access">Get In Touch</a>
+        <a class="tlink" href="method.html">See how it works</a>
+      </div>
+    </div>
+  </div>
+</div></header>
+<!-- 1. THE PROBLEM -->
+<section id="problem"><div class="grid">
+  <div class="side"><div class="slabel">The Problem</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Randomization does</span><span class="blueline">one job.</span></h2>
+    <p class="lede">Everything else is trying to replace it. A trial assigns treatment independently of prognosis. Routine care does not. Sicker patients get treated sooner, and that channel runs straight from confounder to outcome. Most of what goes wrong in observational research goes wrong before any model is fit: a start date that drifts, eligibility judged using information that only arrived later, a comparison no trial could have produced. Target trial emulation is the discipline of settling those questions first, in writing, and it is what TriEmulate automates.</p>
+
+    <div class="panel">
+      <div class="panelbar">
+        <span class="lab">Open backdoor paths</span>
+        <span class="readnum" id="paths">11</span>
+      </div>
+      <canvas id="stage" role="img" aria-label="A confounded population separating into two treatment arms, with the three identifying assumptions named between them"></canvas>
+      <div class="panelacts">
+        <button class="btn sm" id="run" type="button">Emulate the trial</button>
+        <button class="btn sm dark" id="reset" type="button">Reset</button>
+        <span class="note">Illustrative</span>
+      </div>
+    </div>
+    <p class="foot-note">A schematic, not a computation. The three assumptions named between the arms are what an emulation has to argue for, since randomization is not there to deliver them.</p>
+  </div>
+</div></section>
+
+<!-- WHERE TO GO NEXT -->
+<section id="next"><div class="grid">
+  <div class="side"><div class="slabel">Read On</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Three ways in.</span></h2>
+    <div class="cards">
+      <a class="card" href="method.html">
+        <span class="cix mono">01</span>
+        <span class="ct">Method</span>
+        <span class="cd">Eight stages in order, ten candidate start dates weighed against each other, and eligibility written as rules applied once.</span>
+        <span class="cgo">How it decides &rarr;</span>
+      </a>
+      <a class="card" href="output.html">
+        <span class="cix mono">02</span>
+        <span class="ct">Output</span>
+        <span class="cd">A protocol written twice, a causal graph with every node and edge declared, and 21 reporting items marked by what unblocks each one.</span>
+        <span class="cgo">What you get &rarr;</span>
+      </a>
+      <a class="card" href="boundaries.html">
+        <span class="cix mono">03</span>
+        <span class="ct">Boundaries</span>
+        <span class="cd">What it refuses to do, and how a design is mapped onto your schema without a patient record being read.</span>
+        <span class="cgo">What it will not do &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div></section>
+<!-- 10. ACCESS -->
+<section class="access" id="access"><div class="grid">
+  <div class="side"><div class="slabel">Access</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Still</span><span class="blueline">building.</span></h2>
+    <div class="accessfoot">
+      <p>TriEmulate is research software under active development and is not yet generally available. A United States provisional patent application covering the system was filed in September 2026. If you work on causal inference in health data and want to follow it, or you have a question you would like to see put through it, get in touch.</p>
+      <a class="btn dark" href="mailto:hello@triemulate.com?subject=TriEmulate">Get In Touch</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="grid">
+  <div class="fl">TriEmulate &mdash; Research Software &middot; Patent Pending</div>
+  <div class="fr">&copy; 2026 Ishan Suthar &middot; All rights reserved</div>
+</div></footer>
+<script src="assets/js/strands.js" defer></script>
+</body>
+</html>
