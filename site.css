@@ -294,3 +294,15 @@ footer .grid{padding-top:26px;padding-bottom:26px}
   .jrail{right:10px;gap:10px}
   .jrail button span{display:none}
 }
+
+/* hero entrance. The html element gets .jin from a tiny script in the head, before
+   first paint, so the text starts hidden rather than fading out and back in.
+   A 3s failsafe reveals it even if journey.js never runs. */
+.jin .jintro h1,.jin .jintro .herofoot p,.jin .jintro .cta,.jin .jcue{opacity:0;animation:jreveal 0s linear 3s forwards}
+@keyframes jreveal{to{opacity:1}}
+.jin.jgo .jintro h1,.jin.jgo .jintro .herofoot p,.jin.jgo .jintro .cta,.jin.jgo .jcue{opacity:1;animation:none;transition:opacity .3s linear}
+.jin.jgo .jintro h1{transition-delay:.1s}
+.jin.jgo .jintro .herofoot p{transition-delay:.5s}
+.jin.jgo .jintro .cta{transition-delay:.8s}
+.jin.jgo .jcue{transition-delay:2.6s}
+.jin.jstatic .jintro h1,.jin.jstatic .jintro .herofoot p,.jin.jstatic .jintro .cta{opacity:1;animation:none}

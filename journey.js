@@ -120,6 +120,29 @@
     g.rotation.y = (i%2 ? .35 : -.35); scene.add(g); return g;
   });
 
+  /* ---------- on-load draw-in: the first station and the route draw themselves ---------- */
+  var drawIn = [];
+  stations[0].children.forEach(function(ch, k){
+    if (!ch.geometry || !ch.geometry.attributes.position) return;
+    var n = ch.geometry.attributes.position.count;
+    ch.geometry.setDrawRange(0, 0);
+    drawIn.push({obj:ch, n:n, from: k===0 ? .15 : .9, to: k===0 ? 1.9 : 2.3, pairs:true});
+  });
+  routeBase.geometry.setDrawRange(0, 0);
+  drawIn.push({obj:routeBase, n:routeN+1, from:1.3, to:3.4, pairs:false});
+  function runDrawIn(elapsed){
+    var busy = false;
+    drawIn.forEach(function(d){
+      var p = Math.min(1, Math.max(0, (elapsed - d.from) / (d.to - d.from)));
+      if (p < 1) busy = true;
+      var c = Math.floor(d.n * p);
+      if (d.pairs) c -= c % 2;
+      d.obj.geometry.setDrawRange(0, p >= 1 ? Infinity : c);
+    });
+    return busy;
+  }
+  var introDone = false, introStart = performance.now();
+
   var dust = new THREE.BufferGeometry(), dp=[];
   for (var d=0; d<500; d++) dp.push((Math.random()-.5)*44, (Math.random()-.5)*20, 12 - Math.random()*150);
   dust.setAttribute('position', new THREE.Float32BufferAttribute(dp,3));
@@ -173,6 +196,7 @@
     requestAnimationFrame(frame);
     var dt=clock.getDelta();
     if (!running) return;
+    if (!introDone) introDone = !runDrawIn((performance.now() - introStart) / 1000);
     current += (target-current)*Math.min(1, dt*4.5);
     var cp=camCurve.getPoint(current), lp=lookCurve.getPoint(current);
     var narrow = innerWidth < 760;
@@ -195,5 +219,7 @@
 
   addEventListener('resize', function(){ resize(); onScroll(); });
   addEventListener('scroll', onScroll, {passive:true});
+  /* the head script already hid the hero text; reveal it in sequence */
+  setTimeout(function(){ document.documentElement.classList.add('jgo'); }, 60);
   resize(); onScroll(); setStage(0); requestAnimationFrame(frame);
 })();
