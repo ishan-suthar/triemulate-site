@@ -12,7 +12,7 @@
   --pad:clamp(20px,3.4vw,48px);
 }
 *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{background:var(--cream);color:var(--jet);font-family:"General Sans","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
 .skip{position:absolute;left:-9999px}
@@ -30,8 +30,8 @@ nav{position:sticky;top:0;z-index:20;height:80px;border-bottom:1px solid var(--r
 nav .grid{height:80px;align-items:center}
 .logo{grid-column:1 / span 3;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;font-size:19px;text-decoration:none;color:var(--jet)}
 .logo span{color:var(--cobalt)}
-.navstat{grid-column:4 / span 5;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--gray-m)}
-.navlinks{grid-column:8 / span 5;display:flex;justify-content:flex-end;gap:24px}
+.navstat{grid-column:4 / span 3;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--gray-m)}
+.navlinks{grid-column:7 / span 6;display:flex;justify-content:flex-end;gap:22px;flex-wrap:wrap}
 .navlinks a{font-size:14px;font-weight:600;color:var(--jet);text-decoration:none;transition:color .3s linear}
 .navlinks a:hover,.navlinks a:focus-visible{color:var(--cobalt)}
 
@@ -188,6 +188,9 @@ footer .grid{padding-top:26px;padding-bottom:26px}
 .fr{grid-column:7 / span 6;text-align:right;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--gray-m)}
 
 @media (max-width:1000px){
+  .navstat{display:none}
+  .logo{grid-column:1 / span 4}
+  .navlinks{grid-column:5 / span 8;flex-wrap:nowrap}
   .flow{grid-template-columns:1fr}
   .rail{border-right:0;border-bottom:1px solid var(--rule)}
   .dgrid{grid-template-columns:1fr}
@@ -197,13 +200,18 @@ footer .grid{padding-top:26px;padding-bottom:26px}
   .tkeys{grid-template-columns:1fr}
 }
 @media (max-width:760px){
+  html{scroll-padding-top:120px}
   .side{grid-column:1 / -1;border-right:0;border-bottom:1px solid var(--rule);padding:22px 0}
   .main{grid-column:1 / -1;padding:32px 0 44px}
   .slabel{position:static}
   .mark{display:none}
   .navstat{display:none}
-  .logo{grid-column:1 / span 6}
-  .navlinks{grid-column:7 / span 6;gap:18px}
+  nav{height:auto}
+  nav .grid{height:auto;row-gap:10px;padding-top:16px;padding-bottom:12px}
+  .logo{grid-column:1 / -1}
+  .navlinks{grid-column:1 / -1;justify-content:flex-start;flex-wrap:nowrap;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{white-space:nowrap;font-size:14px}
   .metrics{grid-template-columns:1fr}
   .herofoot{grid-template-columns:1fr;gap:32px}
   .fl,.fr{grid-column:1 / -1;text-align:left}
@@ -226,3 +234,75 @@ footer .grid{padding-top:26px;padding-bottom:26px}
 .card:hover .cgo,.card:focus-visible .cgo{color:var(--jet)}
 .navlinks a.on{color:var(--cobalt);text-decoration:underline;text-underline-offset:6px}
 @media (max-width:1000px){.cards{grid-template-columns:1fr}}
+
+/* ---- access call to action pair ---- */
+.ctagroup{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+
+.founder{display:inline-block;margin-top:6px;font-weight:600;letter-spacing:.12em;color:var(--gray-d)}
+
+
+/* ================= landing: 3D stage journey ================= */
+#jcanvas{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
+.landing nav{z-index:20}
+.jintro{position:relative;z-index:3;border-bottom:0}
+.jintro .grid{min-height:calc(100vh - 80px);align-items:center}
+.jmain{grid-column:1 / -1;padding:64px 0 48px}
+.jcue{margin-top:44px;font-size:13px;font-weight:600;color:var(--gray-m);display:flex;align-items:center;gap:12px}
+.jcue i{display:inline-block;width:1px;height:36px;background:var(--rule);position:relative;overflow:hidden}
+.jcue i::after{content:"";position:absolute;left:0;top:-12px;width:1px;height:12px;background:var(--cobalt);animation:jdrop 1.6s linear infinite}
+@keyframes jdrop{to{top:36px}}
+.journey{height:900vh;position:relative;z-index:1}
+
+.jpanel{position:fixed;z-index:15;left:var(--pad);bottom:calc(var(--pad) + env(safe-area-inset-bottom,0px));width:min(430px,calc(100vw - 2*var(--pad) - 44px));background:rgba(227,226,222,.9);border:1px solid var(--rule);padding:20px 22px 22px;opacity:0;transition:opacity .3s linear;pointer-events:none}
+.jpanel.on{opacity:1}
+.jphead{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.jpix{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;font-weight:700;color:var(--gray-m)}
+.jpname{font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.jptext{margin-top:12px;font-size:15px;line-height:1.5;color:var(--gray-d);min-height:4.5em}
+.jpdec{margin-top:12px;font-size:13px;line-height:1.45}
+.jpdec b{font-weight:600;color:var(--cobalt)}
+
+.jrail{position:fixed;z-index:15;right:var(--pad);top:55%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;opacity:0;transition:opacity .3s linear;pointer-events:none}
+.jrail.on{opacity:1;pointer-events:auto}
+.jrail button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:flex-end;font-size:12px;font-weight:600;color:var(--gray-m)}
+.jrail button span{opacity:0;transition:opacity .3s linear}
+.jrail button:hover span,.jrail button:focus-visible span,.jrail button.cur span{opacity:1}
+.jrail button i{display:block;width:10px;height:10px;border:1px solid var(--gray-m);transition:background-color .3s linear,border-color .3s linear}
+.jrail button.done i{background:var(--gray-m)}
+.jrail button.cur i{background:var(--cobalt);border-color:var(--cobalt)}
+.jrail button.cur{color:var(--jet)}
+
+/* everything after the journey sits on solid ground above the canvas */
+.jsolid{position:relative;z-index:3;background:var(--cream);border-top:1px solid var(--rule)}
+.joutro{border-bottom:1px solid var(--rule)}
+
+/* static fallback: no WebGL, or reduced motion */
+.jfallback{display:none;position:relative;z-index:3;background:var(--cream);border-top:1px solid var(--rule)}
+.jfallback ol{list-style:none;border-top:1px solid var(--rule);max-width:780px}
+.jfallback li{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.jfallback .n{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;font-weight:700;color:var(--cobalt);padding-top:4px}
+.jfallback h3{font-size:20px;letter-spacing:-.02em}
+.jfallback p{font-size:15px;line-height:1.5;color:var(--gray-d);margin-top:4px}
+.jstatic #jcanvas,.jstatic .journey,.jstatic .jpanel,.jstatic .jrail,.jstatic .jcue{display:none}
+.jstatic .jfallback{display:block}
+
+@media (max-width:760px){
+  .jintro .grid{min-height:calc(100vh - 100px)}
+  .jmain{padding:40px 0 32px}
+  .jpanel{left:14px;right:14px;width:auto;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:16px 16px 18px}
+  .jptext{font-size:14px;min-height:0}
+  .jrail{right:10px;gap:10px}
+  .jrail button span{display:none}
+}
+
+/* hero entrance. The html element gets .jin from a tiny script in the head, before
+   first paint, so the text starts hidden rather than fading out and back in.
+   A 3s failsafe reveals it even if journey.js never runs. */
+.jin .jintro h1,.jin .jintro .herofoot p,.jin .jintro .cta,.jin .jcue{opacity:0;animation:jreveal 0s linear 3s forwards}
+@keyframes jreveal{to{opacity:1}}
+.jin.jgo .jintro h1,.jin.jgo .jintro .herofoot p,.jin.jgo .jintro .cta,.jin.jgo .jcue{opacity:1;animation:none;transition:opacity .3s linear}
+.jin.jgo .jintro h1{transition-delay:.1s}
+.jin.jgo .jintro .herofoot p{transition-delay:.5s}
+.jin.jgo .jintro .cta{transition-delay:.8s}
+.jin.jgo .jcue{transition-delay:2.6s}
+.jin.jstatic .jintro h1,.jin.jstatic .jintro .herofoot p,.jin.jstatic .jintro .cta{opacity:1;animation:none}
