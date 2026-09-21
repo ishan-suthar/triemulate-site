@@ -115,7 +115,8 @@ h1 span{color:var(--cobalt)}
 .dacts{display:flex;gap:12px;margin-top:auto;padding-top:22px}
 
 /* ---- two-column tables ---- */
-.ptable{margin-top:52px;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.ptable{margin-top:52px;border-top:1px solid var(--rule);border-left:1px solid var(--rule);overflow-x:auto}
+.pgrid{min-width:720px}
 .phead,.prow{display:grid;grid-template-columns:34px minmax(0,1fr) minmax(0,1.15fr)}
 .phead > div,.prow > div{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 16px}
 .phead > div{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--gray-m);background:rgba(255,255,255,.22)}
@@ -216,8 +217,6 @@ footer .grid{padding-top:26px;padding-bottom:26px}
   .herofoot{grid-template-columns:1fr;gap:32px}
   .fl,.fr{grid-column:1 / -1;text-align:left}
   #stage{height:280px}
-  .phead,.prow{grid-template-columns:28px 1fr}
-  .prow .emu,.phead .emu{grid-column:2 / -1}
   .tstrip{grid-template-columns:repeat(7,1fr)}
   .tseg{height:52px}
 }
