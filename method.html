@@ -23,7 +23,7 @@
 </head>
 <body>
 
-<a class="skip" href="#system">Skip to content</a>
+<a class="skip" href="#problem">Skip to content</a>
 
 <nav><div class="grid">
   <a class="logo" href="index.html">Tri<span>Emulate</span></a>
@@ -36,6 +36,29 @@
     <a href="#access">Contact</a>
   </div>
 </div></nav>
+
+<!-- 1. THE PROBLEM -->
+<section id="problem"><div class="grid">
+  <div class="side"><div class="slabel">The Problem</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Randomization does</span><span class="blueline">one job.</span></h2>
+    <p class="lede">Everything else is trying to replace it. A trial assigns treatment independently of prognosis. Routine care does not. Sicker patients get treated sooner, and that channel runs straight from confounder to outcome. Most of what goes wrong in observational research goes wrong before any model is fit: a start date that drifts, eligibility judged using information that only arrived later, a comparison no trial could have produced. Target trial emulation is the discipline of settling those questions first, in writing, and it is what TriEmulate automates.</p>
+
+    <div class="panel">
+      <div class="panelbar">
+        <span class="lab">Open backdoor paths</span>
+        <span class="readnum" id="paths">11</span>
+      </div>
+      <canvas id="stage" role="img" aria-label="A confounded population separating into two treatment arms, with the three identifying assumptions named between them"></canvas>
+      <div class="panelacts">
+        <button class="btn sm" id="run" type="button">Emulate the trial</button>
+        <button class="btn sm dark" id="reset" type="button">Reset</button>
+        <span class="note">Illustrative</span>
+      </div>
+    </div>
+    <p class="foot-note">A schematic, not a computation. The three assumptions named between the arms are what an emulation has to argue for, since randomization is not there to deliver them.</p>
+  </div>
+</div></section>
 
 <!-- 2. THE SYSTEM -->
 <section id="system"><div class="grid">
@@ -157,6 +180,7 @@
   <div class="fl">TriEmulate &mdash; Enterprise Infrastructure &middot; Patent Pending<br><span class="founder">Founded by Ishan Suthar, MD, MPH, PhD (c)</span></div>
   <div class="fr">&copy; 2026 Ishan Suthar &middot; All rights reserved</div>
 </div></footer>
+<script src="assets/js/strands.js" defer></script>
 <script src="assets/js/flow.js" defer></script>
 <script src="assets/js/cohort.js" defer></script>
 </body>

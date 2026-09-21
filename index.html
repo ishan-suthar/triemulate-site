@@ -21,9 +21,11 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body class="landing">
 
-<a class="skip" href="#problem">Skip to content</a>
+<a class="skip" href="#jintro">Skip to content</a>
+
+<canvas id="jcanvas" aria-hidden="true"></canvas>
 
 <nav><div class="grid">
   <a class="logo" href="index.html">Tri<span>Emulate</span></a>
@@ -37,9 +39,8 @@
   </div>
 </div></nav>
 
-<header class="hero" id="top"><div class="grid">
-  <div class="side"><div class="slabel">Manifesto</div><div class="mark"></div></div>
-  <div class="main">
+<header class="jintro" id="jintro"><div class="grid">
+  <div class="main jmain">
     <h1>The trial you can't run. <span>Emulated.</span></h1>
     <div class="herofoot">
       <p>Nobody will randomize acutely ill patients to delayed treatment to settle the question. TriEmulate writes the protocol for that trial anyway, then states exactly how each part of it would be carried out in the data you already hold.</p>
@@ -48,28 +49,32 @@
         <a class="tlink" href="method.html">See how it works</a>
       </div>
     </div>
+    <div class="jcue" id="jcue"><i></i>Scroll to follow a question through eight stages</div>
   </div>
 </div></header>
-<!-- 1. THE PROBLEM -->
-<section id="problem"><div class="grid">
-  <div class="side"><div class="slabel">The Problem</div></div>
-  <div class="main">
-    <h2 class="stack"><span>Randomization does</span><span class="blueline">one job.</span></h2>
-    <p class="lede">Everything else is trying to replace it. A trial assigns treatment independently of prognosis. Routine care does not. Sicker patients get treated sooner, and that channel runs straight from confounder to outcome. Most of what goes wrong in observational research goes wrong before any model is fit: a start date that drifts, eligibility judged using information that only arrived later, a comparison no trial could have produced. Target trial emulation is the discipline of settling those questions first, in writing, and it is what TriEmulate automates.</p>
 
-    <div class="panel">
-      <div class="panelbar">
-        <span class="lab">Open backdoor paths</span>
-        <span class="readnum" id="paths">11</span>
-      </div>
-      <canvas id="stage" role="img" aria-label="A confounded population separating into two treatment arms, with the three identifying assumptions named between them"></canvas>
-      <div class="panelacts">
-        <button class="btn sm" id="run" type="button">Emulate the trial</button>
-        <button class="btn sm dark" id="reset" type="button">Reset</button>
-        <span class="note">Illustrative</span>
-      </div>
-    </div>
-    <p class="foot-note">A schematic, not a computation. The three assumptions named between the arms are what an emulation has to argue for, since randomization is not there to deliver them.</p>
+<section class="journey" id="journey" aria-hidden="true"></section>
+
+<section class="jfallback" aria-label="The eight stages"><div class="grid">
+  <div class="side"><div class="slabel">The Sequence</div></div>
+  <div class="main"><ol id="jflist"></ol></div>
+</div></section>
+
+<aside class="jpanel" id="jpanel" aria-live="polite">
+  <div class="jphead"><span class="jpix" id="jpix">01 of 08</span><span class="jpname" id="jpname">Restate</span></div>
+  <p class="jptext" id="jptext"></p>
+  <p class="jpdec"><b>Decides</b> <span id="jpdec"></span></p>
+</aside>
+
+<nav class="jrail" id="jrail" aria-label="Jump to a stage"></nav>
+
+<div class="jsolid">
+
+<section class="joutro"><div class="grid">
+  <div class="side"><div class="slabel">Provenance</div></div>
+  <div class="main">
+    <h2 class="stack"><span>Every decision,</span><span class="blueline">traceable.</span></h2>
+    <p class="lede">Each stage records what it decided and why, so a reviewer can disagree with a specific choice rather than with the design as a whole.</p>
   </div>
 </div></section>
 
@@ -82,7 +87,7 @@
       <a class="card" href="method.html">
         <span class="cix mono">01</span>
         <span class="ct">Method</span>
-        <span class="cd">Eight stages in order, ten candidate start dates weighed against each other, and eligibility written as rules applied once.</span>
+        <span class="cd">Why the trial cannot be run, then eight stages in order, ten candidate start dates weighed against each other, and eligibility written as rules applied once.</span>
         <span class="cgo">How it decides &rarr;</span>
       </a>
       <a class="card" href="output.html">
@@ -100,6 +105,7 @@
     </div>
   </div>
 </div></section>
+
 <!-- 10. ACCESS -->
 <section class="access" id="access"><div class="grid">
   <div class="side"><div class="slabel">Access</div></div>
@@ -119,6 +125,10 @@
   <div class="fl">TriEmulate &mdash; Enterprise Infrastructure &middot; Patent Pending<br><span class="founder">Founded by Ishan Suthar, MD, MPH, PhD (c)</span></div>
   <div class="fr">&copy; 2026 Ishan Suthar &middot; All rights reserved</div>
 </div></footer>
-<script src="assets/js/strands.js" defer></script>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/journey.js" defer></script>
 </body>
 </html>

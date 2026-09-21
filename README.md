@@ -5,18 +5,23 @@ Static site. No build step, no dependencies, no server-side code.
 ## Structure
 
     triemulate-site/
-      index.html              landing: hero, the problem, three teasers, access
-      method.html             eight-stage flow, start-date matrix, eligibility
+      index.html              landing: hero, 3D eight-stage journey, three teasers, access
+      method.html             the problem (strands), eight-stage flow, start-date matrix, eligibility
       output.html             protocol table, causal graph, reporting coverage
       boundaries.html         does / will not do, your data, access
       assets/
         css/site.css          design system: palette, grid, components
-        js/strands.js         landing canvas — arms separating, assumptions named
+        js/journey.js         landing 3D journey through the eight stages (needs three.js)
+        js/strands.js         arms-separating canvas (method.html)
         js/cohort.js          eligibility attrition scatter (method.html)
         js/flow.js            interactive eight-stage sequence (method.html)
       robots.txt              disallows indexing (see "Before publishing")
       .nojekyll               stops GitHub Pages from processing the folder
       README.md
+
+The landing page loads three.js r128 from cdnjs, then assets/js/journey.js.
+If WebGL is unavailable, or the visitor has reduced motion switched on, the
+journey is replaced by a plain numbered list of the eight stages.
 
 Each page loads only the scripts it uses. output.html and boundaries.html
 load none. Nav is repeated in each file; there is no template step, so a
@@ -46,7 +51,7 @@ Any static host. Drop the folder contents at the web root.
 ## Before publishing
 
 1. Contact link. The Access button now points at
-   `mailto:i.ishan.2812@gmail.com`. Change it if you want a different
+   `mailto:research@triemulate.com`. Change it if you want a different
    address on the public page.
 2. Indexing is ON. robots.txt allows all crawlers and no page carries a
    noindex tag. This is deliberate: the provisional was filed on
