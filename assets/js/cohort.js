@@ -1,5 +1,5 @@
-/* Eligibility attrition. Illustrative figures only —
-   no dataset is read and no cohort is constructed here. */
+/* Eligibility attrition. Illustrative figures only.
+   No dataset is read and no cohort is constructed here. */
 (function(){
   var cc=document.getElementById('cohort');
   if(!cc)return;

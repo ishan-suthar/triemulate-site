@@ -141,7 +141,10 @@
     });
     return busy;
   }
-  var introDone = false, introStart = performance.now();
+  var introDone = false, introStart = null;
+  /* the draw-in waits until the stage intro scrolls into view, so it is not spent behind the hero */
+  var jhead = document.getElementById('journey-intro');
+  function armed(){ return !jhead || jhead.getBoundingClientRect().top < innerHeight*.8; }
 
   var dust = new THREE.BufferGeometry(), dp=[];
   for (var d=0; d<500; d++) dp.push((Math.random()-.5)*44, (Math.random()-.5)*20, 12 - Math.random()*150);
@@ -196,7 +199,10 @@
     requestAnimationFrame(frame);
     var dt=clock.getDelta();
     if (!running) return;
-    if (!introDone) introDone = !runDrawIn((performance.now() - introStart) / 1000);
+    if (!introDone){
+      if (introStart === null && armed()) introStart = performance.now();
+      if (introStart !== null) introDone = !runDrawIn((performance.now() - introStart) / 1000);
+    }
     current += (target-current)*Math.min(1, dt*4.5);
     var cp=camCurve.getPoint(current), lp=lookCurve.getPoint(current);
     var narrow = innerWidth < 760;
@@ -219,7 +225,5 @@
 
   addEventListener('resize', function(){ resize(); onScroll(); });
   addEventListener('scroll', onScroll, {passive:true});
-  /* the head script already hid the hero text; reveal it in sequence */
-  setTimeout(function(){ document.documentElement.classList.add('jgo'); }, 60);
   resize(); onScroll(); setStage(0); requestAnimationFrame(frame);
 })();

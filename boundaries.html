@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boundaries — TriEmulate</title>
+<title>Boundaries | TriEmulate</title>
 <meta name="description" content="What TriEmulate does, what it will not do, and how it maps a design onto your schema without reading a patient record.">
 <link rel="canonical" href="https://www.triemulate.com/boundaries">
 <meta property="og:url" content="https://www.triemulate.com/boundaries">
@@ -12,33 +12,43 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TriEmulate">
-<meta property="og:title" content="Boundaries — TriEmulate">
+<meta property="og:title" content="Boundaries | TriEmulate">
 <meta property="og:description" content="What TriEmulate does, what it will not do, and how it maps a design onto your schema without reading a patient record.">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=3">
+<link rel="stylesheet" href="assets/css/site.css?v=4">
 </head>
 <body>
 
 <a class="skip" href="#different">Skip to content</a>
 
-<nav><div class="grid">
-  <a class="logo" href="index.html">Tri<span>Emulate</span></a>
-  <div class="navstat">Target Trial Emulation Engine &middot; In Development &middot; Patent Pending</div>
-  <div class="navlinks">
+<header class="topnav"><div class="wrap">
+  <a class="logo" href="index.html" aria-label="TriEmulate home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1351AA"/><path d="M9 10h14M12.5 10v12" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M19.5 10v12" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2.2 2.8"/></svg>
+    <b class="wm">Tri<span>Emulate</span></b>
+  </a>
+  <nav class="navlinks" aria-label="Main">
     <a href="index.html">Home</a>
     <a href="method.html">Method</a>
     <a href="output.html">Output</a>
     <a href="boundaries.html" class="on">Boundaries</a>
-    <a href="#access">Contact</a>
-  </div>
-</div></nav>
+    <a href="index.html#faq">FAQ</a>
+  </nav>
+  <a class="btn sm" href="index.html#access">Request a demo</a>
+</div></header>
+
+<section class="phero"><div class="wrap">
+  <span class="eyebrow"><i></i>Boundaries</span>
+  <h1>Clear lines, <span>kept on purpose.</span></h1>
+  <p>What TriEmulate refuses to do, and how a design is mapped onto your schema without a patient record being read.</p>
+  <div class="jumps"><a href="#different">Does and does not</a><a href="#data">Your data</a></div>
+</div></section>
 
 <!-- 8. WHAT IT DOES AND DOESN'T -->
-<section id="different"><div class="grid">
+<section id="different" class="isec"><div class="grid">
   <div class="side"><div class="slabel">Why Different</div></div>
   <div class="main">
     <h2 class="stack"><span>What it does.</span><span class="blueline">What it will not.</span></h2>
@@ -60,7 +70,7 @@
 </div>
 </div></section>
 <!-- 9. YOUR DATA -->
-<section id="data"><div class="grid">
+<section id="data" class="isec soft"><div class="grid">
   <div class="side"><div class="slabel">Your Data</div></div>
   <div class="main">
     <h2 class="stack"><span>Portable design.</span><span class="blueline">Your mapping.</span></h2>
@@ -68,24 +78,29 @@
     <p class="foot-note">A catalog for OMOP CDM v5.4 is built in, covering 39 tables and 432 columns. Any other source is supported by uploading a description of its schema, which is admitted only if it carries schema metadata and no record-level content.</p>
   </div>
 </div></section>
-<!-- 10. ACCESS -->
-<section class="access" id="access"><div class="grid">
-  <div class="side"><div class="slabel">Access</div></div>
-  <div class="main">
-    <h2 class="stack"><span>Demo our</span><span class="blueline">services.</span></h2>
-    <div class="accessfoot">
-      <p>TriEmulate is enterprise infrastructure under active development and is not yet generally available, but it runs today and can be walked through end to end on a question of your own. A United States provisional patent application covering the system was filed in September 2026. If you work on causal inference in health data, bring a question and we will put it through.</p>
-      <div class="ctagroup">
-        <a class="btn dark" href="mailto:research@triemulate.com?subject=TriEmulate%20demo%20request">Request A Demo</a>
-        <a class="btn" href="mailto:research@triemulate.com?subject=TriEmulate%20enquiry">Contact</a>
-      </div>
-    </div>
+<div class="nextcard"><a href="method.html"><span><span class="nl">Start from the method</span><span class="nt">How the design gets decided</span></span><span class="arr"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+<section class="ctaband" id="access"><div>
+  <div>
+    <h2>Bring a question. We will put it through.</h2>
+    <p>TriEmulate is under active development and not yet generally available, but it runs today and can be walked through end to end on a question of your own. A United States provisional patent application covering the system was filed in September 2026.</p>
+  </div>
+  <div class="ctagroup">
+    <a class="btn white" href="index.html#access">Request a demo <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="btn line" href="mailto:research@triemulate.com?subject=TriEmulate%20enquiry">Contact</a>
   </div>
 </div></section>
 
-<footer><div class="grid">
-  <div class="fl">TriEmulate &mdash; Enterprise Infrastructure &middot; Patent Pending<br><span class="founder">Founded by Ishan Suthar, MD, MPH, PhD (c)</span></div>
-  <div class="fr">&copy; 2026 Ishan Suthar &middot; All rights reserved</div>
+<footer class="foot"><div class="wrap">
+  <div class="ftop">
+    <div>
+      <a class="logo" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#fff"/><path d="M9 10h14M12.5 10v12" stroke="#1351AA" stroke-width="2.6" stroke-linecap="round"/><path d="M19.5 10v12" stroke="#1351AA" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2.2 2.8"/></svg><b class="wm">Tri<span>Emulate</span></b></a>
+      <p class="tag">A target trial emulation engine. It turns a clinical research question into an explicit, auditable study design.</p>
+    </div>
+    <div><h4>Explore</h4><ul><li><a href="method.html">Method</a></li><li><a href="output.html">Output</a></li><li><a href="boundaries.html">Boundaries</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:research@triemulate.com">research@triemulate.com</a></li><li><a href="mailto:research@triemulate.com?subject=TriEmulate%20demo%20request">Request a demo</a></li></ul></div>
+  </div>
+  <div class="fbot"><span>&copy; 2026 Ishan Suthar &middot; All rights reserved &middot; Patent pending</span><span>Founded by Ishan Suthar, MD, MPH, PhD (c)</span></div>
 </div></footer>
+<script src="assets/js/site.js?v=4" defer></script>
 </body>
 </html>
