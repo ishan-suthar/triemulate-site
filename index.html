@@ -21,6 +21,100 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css?v=5">
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("jin");</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.triemulate.com/#org",
+   "name": "TriEmulate",
+   "url": "https://www.triemulate.com/",
+   "logo": "https://www.triemulate.com/assets/og.png",
+   "email": "research@triemulate.com",
+   "founder": {
+    "@type": "Person",
+    "name": "Ishan Suthar"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.triemulate.com/#site",
+   "name": "TriEmulate",
+   "url": "https://www.triemulate.com/",
+   "publisher": {
+    "@id": "https://www.triemulate.com/#org"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "name": "TriEmulate",
+   "applicationCategory": "BusinessApplication",
+   "applicationSubCategory": "Target trial emulation",
+   "operatingSystem": "Web",
+   "url": "https://www.triemulate.com/",
+   "description": "TriEmulate is a target trial emulation engine. It turns a clinical research question into an explicit, auditable target trial protocol and observational study design for real-world data.",
+   "keywords": "target trial emulation, emulate a target trial, causal inference, observational study design, real-world evidence, time zero, immortal time bias",
+   "publisher": {
+    "@id": "https://www.triemulate.com/#org"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does TriEmulate run the analysis or produce effect estimates?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It writes the design: the protocol, the causal graph, the schema mapping and the reporting structure. It names the quantity being estimated and what the analysis must account for, and the choice of estimator stays with your analysts. It never produces a figure it did not read from your data."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it need access to patient records?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Mapping runs against a catalog of your schema alone: table names, column names and data types. Uploaded schema descriptions are admitted only if they carry schema metadata and no record-level content, so the check can run where the records themselves cannot be touched."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which data models does it support?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A catalog for OMOP CDM v5.4 is built in, covering 39 tables and 432 columns. Any other source is supported by uploading a description of its schema. The design layer itself is independent of any one database."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens when a variable is not in my data?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is reported as unresolved. The engine does not substitute the nearest available field, and it does not quietly repair its own output into something that reads as complete."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I disagree with the choices it makes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "That is the point of the provenance record. Every stage states what it decided and why, including the alternatives it rejected, so a reviewer can challenge one specific choice rather than the design as a whole."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is TriEmulate available now?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is under active development and not yet generally available, but it runs today. We can walk through it end to end on a question of your own. A United States provisional patent application covering the system was filed in September 2026."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body class="landing">
 
@@ -48,9 +142,9 @@
 <section class="hero" id="top">
   <div class="wrap">
     <div class="htext">
-      <span class="eyebrow rv d1"><i></i>Patent pending &middot; In active development</span>
+      <span class="eyebrow rv d1"><i></i>Target trial emulation engine &middot; Patent pending</span>
       <h1 class="rv d2">The trial you can't run. <span>Emulated.</span></h1>
-      <p class="sub rv d3">Nobody will randomize acutely ill patients to delayed treatment to settle the question. TriEmulate writes the protocol for that trial anyway, then states exactly how each part of it would be carried out in the data you already hold.</p>
+      <p class="sub rv d3">Nobody will randomize acutely ill patients to delayed treatment to settle the question. TriEmulate, a target trial emulation engine, writes the protocol for that trial anyway, then states exactly how each part of it would be carried out in the data you already hold.</p>
       <div class="cta rv d4">
         <a class="btn" href="#access">Request a demo <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="btn ghost" href="watch.html"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 5.2v5.6L11 8z" fill="currentColor"/></svg>Watch the demo</a>
