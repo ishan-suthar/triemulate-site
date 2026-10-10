@@ -23,3 +23,24 @@
       '&body=' + encodeURIComponent(body);
   });
 })();
+
+/* Watch page: chapter list seeks the video and follows playback. */
+(function(){
+  var v = document.getElementById('demo'), list = document.getElementById('chaps');
+  if (!v || !list) return;
+  var btns = [].slice.call(list.querySelectorAll('.chap'));
+  var times = btns.map(function(b){ return +b.getAttribute('data-t'); });
+  btns.forEach(function(b, i){
+    b.addEventListener('click', function(){
+      v.currentTime = times[i];
+      var p = v.play(); if (p && p.catch) p.catch(function(){});
+    });
+  });
+  function mark(){
+    var t = v.currentTime, cur = 0;
+    for (var i = 0; i < times.length; i++) if (t >= times[i] - 0.05) cur = i;
+    btns.forEach(function(b, i){ b.classList.toggle('on', i === cur && (t > 0 || !v.paused)); });
+  }
+  v.addEventListener('timeupdate', mark);
+  v.addEventListener('seeked', mark);
+})();

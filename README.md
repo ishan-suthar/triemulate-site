@@ -7,6 +7,7 @@ index.html        Home: hero, 3D eight-stage journey, paths, steps, founder, FAQ
 method.html       The problem, the design sequence, start-date matrix, eligibility cuts
 output.html       Two-column protocol, causal graph, reporting checklist
 boundaries.html   What it does and will not do, how your schema is mapped
+watch.html        See it work: demo video with clickable chapters
 404.html          Not-found page
 robots.txt, sitemap.xml
 assets/css/site.css     Design system
@@ -16,3 +17,4 @@ assets/js/strands.js    Method: confounded population animation
 assets/js/flow.js       Method: stage stepper
 assets/js/cohort.js     Method: eligibility attrition
 assets/favicon.svg, assets/og.png   Tab icon and social share image
+assets/video/     Demo video (mp4) and its poster frame
