@@ -7,8 +7,8 @@ Static site. No build step. Upload the contents of this folder to the root of th
 - New logo in the nav and footer of every page, the browser tab icon, phone home-screen icon, social share image and structured data.
 - Logo is larger, with the wordmark set closer to the mark. Hovering it plays one turn of the brand animation (off for reduced motion).
 - Site blue matches the logo (#2563EB); navy (#0A1C36) for text and the footer.
-- Founder card on the home page now uses the headshot; signature removed; footer credit is the name only.
-- 404 page shows the animated mark.
+- Founder section: headshot, new two-paragraph quote, name shown once on the photo, photo height matched to the quote on wide screens.
+- Footer credit is the name only. 404 page shows the animated mark.
 
 ## Files
 

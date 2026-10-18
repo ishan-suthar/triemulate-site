@@ -588,7 +588,15 @@ section:nth-of-type(even) > .grid{position:relative}
 .fpic::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,28,54,0) 48%,rgba(10,28,54,.9) 100%)}
 .fpic .creds{top:auto;bottom:108px}
 .fpic .creds span{background:rgba(255,255,255,.16)}
-@media (max-width:900px){.fpic{max-width:480px}}
+/* photo and quote share one height on wide screens; stacked below 1080px as before */
+.fquote blockquote{font-size:clamp(17px,1.5vw,20px);line-height:1.6}
+.fquote blockquote p+p{margin-top:1em}
+@media (min-width:1081px){
+  .fgrid{align-items:stretch;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px}
+  .fpic{aspect-ratio:auto;min-height:360px}
+  .fquote{display:flex;flex-direction:column;justify-content:center}
+}
+@media (max-width:1080px){.fpic{max-width:480px;width:100%}.fquote blockquote{font-size:18px}}
 
 /* small screens: keep the larger logo from crowding the nav */
 @media (max-width:560px){.logo{font-size:20px;gap:6px}.logo svg{width:35px;height:31px}}
