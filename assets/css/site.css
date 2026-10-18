@@ -580,6 +580,16 @@ section:nth-of-type(even) > .grid{position:relative}
 }
 
 
+/* founder card with headshot */
+.fpic{aspect-ratio:4/5;background:#2A2F38;isolation:isolate}
+.fpic .fphoto,.fpic .fphoto img{position:absolute;inset:0;width:100%;height:100%}
+.fpic .fphoto{z-index:-1}
+.fpic .fphoto img{object-fit:cover;object-position:50% 20%}
+.fpic::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,28,54,0) 48%,rgba(10,28,54,.9) 100%)}
+.fpic .creds{top:auto;bottom:108px}
+.fpic .creds span{background:rgba(255,255,255,.16)}
+@media (max-width:900px){.fpic{max-width:480px}}
+
 /* small screens: keep the larger logo from crowding the nav */
 @media (max-width:560px){.logo{font-size:20px;gap:6px}.logo svg{width:35px;height:31px}}
 
