@@ -41,10 +41,10 @@ a{color:inherit}
 /* ---------- nav ---------- */
 .topnav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(223,228,239,.7)}
 .topnav .wrap{display:flex;align-items:center;gap:28px;height:76px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.02em;text-decoration:none;color:var(--jet)}
+.logo{display:flex;align-items:center;gap:7px;font-weight:700;font-size:23px;letter-spacing:-.02em;text-decoration:none;color:var(--jet)}
 .logo .wm{font-weight:700;font-family:"Space Grotesk","General Sans",sans-serif;letter-spacing:-.025em}
 .logo span{color:var(--cobalt)}
-.logo svg{width:34px;height:30px;flex:none}
+.logo svg{width:40px;height:35px;flex:none;overflow:visible}
 .navlinks{display:flex;gap:26px;margin-left:auto}
 .navlinks a{font-size:15px;font-weight:500;text-decoration:none;color:var(--gray-d);transition:color .2s}
 .navlinks a:hover,.navlinks a.on{color:var(--cobalt)}
@@ -287,8 +287,7 @@ a{color:inherit}
 .fpic .creds span{padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.14);font-size:12.5px;font-weight:500;backdrop-filter:blur(4px)}
 .fquote svg{width:46px;height:36px;color:var(--cobalt)}
 .fquote blockquote{margin-top:18px;font-size:clamp(19px,1.8vw,23px);line-height:1.5;letter-spacing:-.01em;font-style:italic;color:var(--jet)}
-.fquote .sig{margin-top:24px;font-family:"Brush Script MT","Segoe Script",cursive;font-size:34px;color:var(--cobalt);line-height:1}
-.fquote .nm{margin-top:8px;font-weight:600}
+.fquote .nm{margin-top:24px;font-weight:600;font-size:17px;color:#1E3A8A}
 .fquote .rl{font-size:14px;color:var(--gray-m)}
 .fcols{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:70px}
 .fcols h3{position:relative;padding-top:22px;font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--cobalt)}
@@ -580,6 +579,9 @@ section:nth-of-type(even) > .grid{position:relative}
   .clist{grid-template-columns:repeat(2,1fr)}
 }
 
+
+/* small screens: keep the larger logo from crowding the nav */
+@media (max-width:560px){.logo{font-size:20px;gap:6px}.logo svg{width:35px;height:31px}}
 
 /* ---------- brand mark (inline SVG in nav and footer) ---------- */
 .logo .mark .tri{fill:var(--logo-blue);stroke:var(--logo-blue);stroke-width:7;stroke-linejoin:round}
