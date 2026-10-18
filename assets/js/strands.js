@@ -6,7 +6,7 @@
   var ctx=cv.getContext('2d');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var GLYPHS=['\u22A5','\u22A5','\u03B2','\u03C3','\u00B1','\u2260','\u03BB','\u2211','\u03B8','t\u2080','HR','95% CI','ATE','age','creatinine','lactate','severity','baseline_egfr','comorbidity'];
-  var COLORS={ink:'#141414',blue:'#1351AA'};
+  var COLORS={ink:'#141414',blue:'#2563EB'};
   var sprites={};
 
   function buildSprites(dpr){
@@ -99,11 +99,11 @@
   function draw(){
     ctx.clearRect(0,0,W,H);
     ctx.setLineDash([4,3]);
-    ctx.strokeStyle=adjusted?'#1351AA':'#7A7A7A';ctx.lineWidth=1;
+    ctx.strokeStyle=adjusted?'#2563EB':'#7A7A7A';ctx.lineWidth=1;
     var bw=150,bh=32;
     ctx.strokeRect(nodeX-bw/2,nodeY-bh,bw,bh);
     ctx.setLineDash([]);
-    ctx.fillStyle=adjusted?'#1351AA':'#444343';
+    ctx.fillStyle=adjusted?'#2563EB':'#444343';
     ctx.font='700 10px "JetBrains Mono", monospace';ctx.textAlign='center';
     ctx.fillText('TARGET TRIAL',nodeX,nodeY-bh/2+4);
     if(adjusted){
@@ -128,9 +128,9 @@
       ctx.globalAlpha=Math.min(1,assumeAlpha);
       ctx.textAlign='center';
       ctx.font='700 11px "JetBrains Mono", monospace';
-      ctx.fillStyle='#1351AA';
+      ctx.fillStyle='#2563EB';
       for(var q=0;q<ASSUMPTIONS.length;q++)ctx.fillText(ASSUMPTIONS[q],nodeX,midY+q*30);
-      ctx.strokeStyle='#1351AA';ctx.lineWidth=1;
+      ctx.strokeStyle='#2563EB';ctx.lineWidth=1;
       ctx.globalAlpha=Math.min(.5,assumeAlpha*.5);
       ctx.beginPath();ctx.moveTo(nodeX-58,midY-24);ctx.lineTo(nodeX+58,midY-24);ctx.stroke();
       ctx.beginPath();ctx.moveTo(nodeX-58,midY+72);ctx.lineTo(nodeX+58,midY+72);ctx.stroke();

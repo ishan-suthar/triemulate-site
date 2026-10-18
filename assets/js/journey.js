@@ -25,7 +25,7 @@
   if (!gl || typeof THREE === 'undefined' || reduce){ document.documentElement.classList.add('jstatic'); return; }
 
   function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
-  var COL = {bg:css('--cream')||'#E3E2DE', ink:css('--jet')||'#141414', mid:css('--gray-m')||'#7A7A7A', blue:css('--cobalt')||'#1351AA'};
+  var COL = {bg:css('--cream')||'#E3E2DE', ink:css('--jet')||'#141414', mid:css('--gray-m')||'#7A7A7A', blue:css('--cobalt')||'#2563EB'};
 
   var canvas = document.getElementById('jcanvas');
   var renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:false});

@@ -34,7 +34,7 @@
       var d=dots[i];
       var gone=d.cutAt!==null&&d.cutAt<stage;
       cx.globalAlpha=gone?.16:.72;
-      cx.fillStyle=gone?'#7A7A7A':'#1351AA';
+      cx.fillStyle=gone?'#7A7A7A':'#2563EB';
       cx.fillText(d.m,d.x,d.y);
     }
     cx.globalAlpha=1;cx.textAlign='start';cx.textBaseline='alphabetic';

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="512" height="512">
+<style>
+.tri{fill:#60A5FA;stroke:#60A5FA;stroke-width:7;stroke-linejoin:round;animation:turn 6s cubic-bezier(.65,0,.35,1) infinite}
+.p1{animation:step1 2s cubic-bezier(.65,0,.35,1) infinite}
+.p2{animation:step2 2s cubic-bezier(.65,0,.35,1) infinite}
+.p3{animation:step3 2s cubic-bezier(.65,0,.35,1) infinite}
+.tri{transform-box:view-box;transform-origin:0 0}
+.tri path{transform-box:view-box;transform-origin:0 0}
+@keyframes turn{0%,13.333%{transform:translate(64px,64px) rotate(0deg) translate(-64px,-64px)}26.667%,46.667%{transform:translate(64px,64px) rotate(120deg) translate(-64px,-64px)}60%,80%{transform:translate(64px,64px) rotate(240deg) translate(-64px,-64px)}93.333%,100%{transform:translate(64px,64px) rotate(360deg) translate(-64px,-64px)}}
+@keyframes step1{0%,20%{transform:translate(64.000px,28.000px) scale(1) translate(-64.000px,-28.000px)}40%,80%{transform:translate(64.000px,22.000px) scale(.8) translate(-64.000px,-28.000px)}100%{transform:translate(64.000px,28.000px) scale(1) translate(-64.000px,-28.000px)}}
+@keyframes step2{0%,20%{transform:translate(32.823px,82.000px) scale(1) translate(-32.823px,-82.000px)}40%,80%{transform:translate(27.627px,85.000px) scale(.8) translate(-32.823px,-82.000px)}100%{transform:translate(32.823px,82.000px) scale(1) translate(-32.823px,-82.000px)}}
+@keyframes step3{0%,20%{transform:translate(95.177px,82.000px) scale(1) translate(-95.177px,-82.000px)}40%,80%{transform:translate(100.373px,85.000px) scale(.8) translate(-95.177px,-82.000px)}100%{transform:translate(95.177px,82.000px) scale(1) translate(-95.177px,-82.000px)}}
+@media (prefers-reduced-motion: reduce){.tri,.tri path{animation:none}}
+</style>
+<g class="tri"><path class="p1" d="M83.52,45.80 L64.00,12.00 L44.48,45.80 L46.88,47.18 A24,24 0 0 1 81.12,47.18 Z"/><path class="p2" d="M38.48,56.20 L18.97,90.00 L58.00,90.00 L58.00,87.24 A24,24 0 0 1 40.88,57.58 Z"/><path class="p3" d="M70.00,90.00 L109.03,90.00 L89.52,56.20 L87.12,57.58 A24,24 0 0 1 70.00,87.24 Z"/></g>
+<circle cx="64" cy="64" r="13" fill="#F8FAFC"/>
+</svg>
